@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+    <h1>Погода</h1>
+
+    <form action="/weather" method="get">
+        <input type="text" name="city" placeholder="Введите город">
+        <button type="submit">Поиск</button>
+    </form>
+
+    {% if weather %}
+        <h2>{{ weather.city }}</h2>
+        <p>Температура: {{ weather.temp }} °C</p>
+        <p>{{ weather.description }}</p>
+    {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2026 Weather App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
