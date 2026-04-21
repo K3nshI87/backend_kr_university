@@ -1,15 +1,16 @@
 name: Backend Kursovaya Workflow
 
 on:
-    push:
-        branches: 
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
-    checkout-and-print-tree:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Check out repository code
-              uses: actions/checkout@v4
-            - name: Print object tree
-              uses: tree ./app
+  checkout-and-print-tree:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Print object tree
+        run: tree ./app
