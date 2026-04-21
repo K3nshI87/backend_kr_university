@@ -17,6 +17,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app ./app
 
+COPY static ./static
+
+COPY templates ./templates
+
 EXPOSE 8000
 
 # Проверка здоровья контейнера (HEALTHCHECK)

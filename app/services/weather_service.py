@@ -1,6 +1,10 @@
 import httpx
+import os
+from dotenv import load_dotenv
 
-API_KEY = "fc8be0a61bfdf25c98e1501fba537c7d"
+load_dotenv()  # загружает переменные из .env
+
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 async def get_weather(city: str):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
